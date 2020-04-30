@@ -28,16 +28,16 @@ button.on("click", filterData);
 //form.on("submit", filterData);
 
 function filterData(x) { console.log("here")
-    // d3.event.preventDefault();
+    d3.event.preventDefault();
 
-    // var inputElement = d3.select("#datetime");
+    var inputElement = d3.select("#datetime");
 
-    // var inputValue = inputElement.property("value");
+    var inputValue = inputElement.property("value");
 
-    // console.log(inputValue);
-    // console.log(tableData);
+    //console.log(inputValue);
+    //console.log(tableData);
 
-    // var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
+    var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
      var newTable = d3.select("tbody");
     //css selectors
     //no # because its a specific tag
@@ -54,7 +54,7 @@ function filterData(x) { console.log("here")
     //var ufoTable = d3.select("table").append("table");
     //ufoTable.text("a new table has been added!");
     //14.3.2
-    data.forEach(function(ufoReport) {
+    filteredData.forEach(function(ufoReport) {
         //console.log(ufoReport)
         var tbody = d3.select("tbody");
         var row = tbody.append("tr");
